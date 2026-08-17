@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.database import verify_connection
+from database import verify_connection
 from backend.routes.automations import router as automations_router
 from backend.routes.impact import router as impact_router
 from backend.routes.dependencies import router as dependencies_router
