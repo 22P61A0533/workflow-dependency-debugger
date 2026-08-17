@@ -2,10 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from database import verify_connection
-from backend.routes.automations import router as automations_router
-from backend.routes.impact import router as impact_router
-from backend.routes.dependencies import router as dependencies_router
-from backend.routes.fields import router as fields_router
+from routes.automations import router as automations_router
+from routes.impact import router as impact_router
+from routes.dependencies import router as dependencies_router
+from routes.fields import router as fields_router
 
 app = FastAPI(
     title="Workflow Dependency Debugger",
