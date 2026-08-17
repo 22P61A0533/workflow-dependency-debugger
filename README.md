@@ -6,7 +6,47 @@ Built as part of the **Wexa AI — CognoDB Graph Database Take-Home Assignment**
 
 ---
 
-## Overview
+## Live Demo
+
+### Frontend
+
+**Live Application:**
+https://workflow-dependency-debugger-frontend.onrender.com
+
+### Backend API
+
+**Backend:**
+https://workflow-dependency-debugger.onrender.com
+
+### API Documentation
+
+**Swagger / OpenAPI:**
+https://workflow-dependency-debugger.onrender.com/docs
+
+---
+
+## Current Live Dataset
+
+The deployed application is currently connected to CognoDB and successfully displays:
+
+* **9 automations**
+* **13 shared data fields**
+* **0 circular dependencies**
+
+The following features have been verified on the deployed application:
+
+* Dashboard
+* Automation Explorer
+* Impact Analysis
+* Graph visualization
+* Dependency Health
+* Circular dependency detection
+* Backend API connectivity
+* CognoDB connectivity
+
+---
+
+# Overview
 
 Modern businesses often have multiple automations that depend on shared data fields.
 
@@ -452,6 +492,25 @@ The query uses a variable-length `DEPENDS_ON` traversal to identify possible cyc
 
 ---
 
+# API Endpoints
+
+The deployed FastAPI backend exposes the following endpoints.
+
+| Method | Endpoint                   | Purpose                       |
+| ------ | -------------------------- | ----------------------------- |
+| GET    | `/`                        | API status                    |
+| GET    | `/health`                  | Database health check         |
+| GET    | `/api/automations`         | Retrieve automation workflows |
+| GET    | `/api/fields`              | Retrieve shared data fields   |
+| GET    | `/api/impact/{field_id}`   | Analyze field impact          |
+| GET    | `/api/dependencies/cycles` | Detect circular dependencies  |
+
+Interactive API documentation is available at:
+
+https://workflow-dependency-debugger.onrender.com/docs
+
+---
+
 # Technology Stack
 
 ## Frontend
@@ -517,8 +576,8 @@ workflow-dependency-debugger/
 │   ├── routes/
 │   │   ├── automations.py
 │   │   ├── impact.py
-│   │   └── dependencies.py
-|   |   |__ fields.py
+│   │   ├── dependencies.py
+│   │   └── fields.py
 │   │
 │   ├── queries/
 │   │   ├── automation_graph.cypher
@@ -566,7 +625,7 @@ The `.env` file should be included in `.gitignore`.
 # CognoDB Setup
 
 1. Create a CognoDB Cloud account.
-2. Create a free CognoDB instance.
+2. Create a CognoDB instance.
 3. Copy the generated Bolt connection URI.
 4. Save the generated database password.
 5. Configure the environment variables.
@@ -577,7 +636,7 @@ The `.env` file should be included in `.gitignore`.
 
 ---
 
-# Running the Backend
+# Running the Backend Locally
 
 Open a terminal in:
 
@@ -587,7 +646,7 @@ workflow-dependency-debugger/backend
 
 Activate the virtual environment.
 
-Then install the dependencies:
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -605,15 +664,19 @@ Start the FastAPI server:
 uvicorn main:app --reload
 ```
 
-The backend will run at:
+The local backend will normally be available at:
 
 ```text
 http://127.0.0.1:8000
 ```
 
+The deployed backend is available at:
+
+https://workflow-dependency-debugger.onrender.com
+
 ---
 
-# Running the Frontend
+# Running the Frontend Locally
 
 Open another terminal in:
 
@@ -634,6 +697,10 @@ npm run dev
 ```
 
 Open the URL displayed by Vite in the browser.
+
+For the deployed application, visit:
+
+https://workflow-dependency-debugger-frontend.onrender.com
 
 ---
 
@@ -776,7 +843,7 @@ Potential future improvements include:
 | Empty states                      | Implemented                                  |
 | Error handling                    | Implemented                                  |
 | CognoDB environment configuration | Implemented                                  |
-| README documentation              | This document                                |
+| README documentation              | Implemented                                  |
 
 ---
 
@@ -787,3 +854,16 @@ The Workflow Dependency Debugger demonstrates how a graph database can be used t
 The application focuses on a practical graph problem: understanding how changes to shared automation dependencies can affect downstream workflows.
 
 By representing these relationships as a graph, the application can perform multi-hop traversal, visualize dependencies, and detect circular workflow relationships in a way that is naturally suited to a graph database.
+
+---
+
+## Live Links
+
+**Application:**
+https://workflow-dependency-debugger-frontend.onrender.com
+
+**Backend API:**
+https://workflow-dependency-debugger.onrender.com
+
+**Swagger Documentation:**
+https://workflow-dependency-debugger.onrender.com/docs
