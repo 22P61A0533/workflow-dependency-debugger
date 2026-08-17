@@ -2,7 +2,7 @@ from pathlib import Path
 
 from fastapi import APIRouter, HTTPException
 
-from backend.database import driver
+from database import driver
 
 
 router = APIRouter(
