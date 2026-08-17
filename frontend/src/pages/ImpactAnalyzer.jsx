@@ -5,7 +5,7 @@ import LoadingState from "../components/LoadingState";
 import EmptyState from "../components/EmptyState";
 import ErrorState from "../components/ErrorState";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://workflow-dependency-debugger.onrender.com";
 
 function ImpactAnalyzer() {
   const [fields, setFields] = useState([]);
